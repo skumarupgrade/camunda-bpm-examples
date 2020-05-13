@@ -1,3 +1,13 @@
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/process-engine
+#  url: jdbc:mysql://portainer.camunda.loc:3306/process-engine
+#  url: jdbc:oracle:thin:@portainer.camunda.loc:1521:ORCL
+  username: camunda
+  password: camunda
+  driver-class-name: org.postgresql.Driver
+#  driver-class-name: com.mysql.jdbc.Driver
+#  driver-class-name: oracle.jdbc.OracleDriver
+
 camunda:
   bpm:
     filter:
@@ -5,6 +15,6 @@ camunda:
     job-execution:
       core-pool-size: 10
     admin-user:
-      id: kermit
-      password: demodemo
+      id: demo
+      password: demo
 

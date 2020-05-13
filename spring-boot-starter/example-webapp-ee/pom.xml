@@ -7,9 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>
-    <camunda.version>7.12.0-ee</camunda.version>
-    <spring.boot.version>2.2.1.RELEASE</spring.boot.version>
-    <camunda.spring.boot.starter.version>3.4.0</camunda.spring.boot.starter.version>
+    <camunda.version>7.13.0-alpha5-ee</camunda.version>
+    <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
   </properties>
 
   <dependencyManagement>
@@ -35,16 +34,47 @@
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
-      <version>${camunda.spring.boot.starter.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
+      <groupId>org.camunda.bpm.springboot</groupId>
+      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+    <!-- JDBC DRIVERS -->
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.12</version>
+    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.h2database</groupId>-->
+<!--      <artifactId>h2</artifactId>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.oracle.ojdbc</groupId>-->
+<!--      <artifactId>ojdbc8</artifactId>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>mysql</groupId>-->
+<!--      <artifactId>mysql-connector-java</artifactId>-->
+<!--      <version>8.0.17</version>-->
+<!--    </dependency>-->
+
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
       <version>2.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.example</groupId>
+      <artifactId>camunda-example-invoice</artifactId>
+      <version>${camunda.version}</version>
+      <classifier>classes</classifier>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
