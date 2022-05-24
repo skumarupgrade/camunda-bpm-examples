@@ -26,7 +26,8 @@ public class CamundaTaskClient {
 
     public void startProcess() throws ApiException {
         ApiClient client = new ApiClient();
-        //client.setBasePath("https://activity-srvc-skumar.actuator.kube.usw2.ondemand.upgrade.com/api/activity/engine-rest");
+        client.setBasePath("https://activity-srvc-skumar.actuator.kube.usw2.ondemand.upgrade.com/api/activity/engine-rest");
+        //client.setBasePath("http://localhost:8080/engine-rest");
 
         StartProcessInstanceDto startProcessInstanceDto = new StartProcessInstanceDto();
         startProcessInstanceDto.businessKey("serviceRequestId1");
