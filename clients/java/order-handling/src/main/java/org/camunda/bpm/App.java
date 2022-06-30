@@ -23,10 +23,12 @@ import org.camunda.bpm.client.variable.ClientValues;
 import org.camunda.bpm.engine.variable.value.ObjectValue;
 import org.camunda.bpm.engine.variable.value.TypedValue;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@SpringBootApplication
 public class App {
 
     public static void main(String... args) {

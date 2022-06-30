@@ -36,16 +36,17 @@ public class HandlerConfiguration {
     protected static final Logger LOG = LoggerFactory.getLogger(HandlerConfiguration.class);
 
     @Bean
-    @ExternalTaskSubscription("invoiceCreator")
+    @ExternalTaskSubscription(
+            topicName = "invoiceCreator")
     public ExternalTaskHandler invoiceCreatorHandler() {
         return (externalTask, externalTaskService) -> {
             // temp code to work through task assignment
-CamundaTaskClient camundaTaskClient = new CamundaTaskClient();
-            try {
-                camundaTaskClient.startProcess();
-            } catch (ApiException e) {
-                e.printStackTrace();
-            }
+//CamundaTaskClient camundaTaskClient = new CamundaTaskClient();
+//            try {
+//                camundaTaskClient.startProcess();
+//            } catch (ApiException e) {
+//                e.printStackTrace();
+//            }
             // to be commented later.
 
             // instantiate an invoice object
@@ -61,6 +62,13 @@ CamundaTaskClient camundaTaskClient = new CamundaTaskClient();
             Map<String, Object> variables = new HashMap<>();
             variables.put("invoiceId", invoice.id);
             variables.put("invoice", invoiceValue);
+            variables.put("sumant", "sumant");
+
+            try {
+                Thread.sleep(300000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             // select the scope of the variables
             boolean isRandomSample = Math.random() <= 0.5;
